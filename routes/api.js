@@ -91,7 +91,7 @@ router.get("/commit-score", isAuth, (req, res) => {
   };
   addScore();
 
-  res.status(200).json({ id: newScore.id, user: req.session.passport.user, score: newGame.score })
+  res.status(200).json({ user: req.session.passport.user, score: newGame.score })
 })
 
 router.get("/scoreboard", (req, res) => {
