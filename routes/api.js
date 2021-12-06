@@ -15,12 +15,7 @@ const isAuth = (req, res, next) => {
 
 router.get("/", (req, res) => {
   res.send("Hello World");
-  console.log(req.session)
 });
-
-router.get("/home", (req, res) => {
-  res.send("Hello World");
-})
 
 // USER ROUTES ----------------------------------
 

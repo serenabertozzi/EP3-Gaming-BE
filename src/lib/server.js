@@ -33,7 +33,7 @@ app.enable('trust proxy');
 app.use(session({
   secret: 'key that will sign cookie',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: store,
   proxy : true,
   cookie: {
