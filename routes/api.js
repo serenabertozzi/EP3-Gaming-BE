@@ -9,7 +9,7 @@ const isAuth = (req, res, next) => {
   if(req.session.isAuth){
     next();
   }else{
-    res.redirect("/home");
+    res.status(401).json({ message: "Please log in to continue" });
   }
 }
 
