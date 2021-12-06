@@ -27,6 +27,8 @@ const store = new MongoDBSession({
   collection: 'mySessions'
 })
 
+app.enable('trust proxy');
+
 app.use(session({
   secret: 'key that will sign cookie',
   resave: false,
