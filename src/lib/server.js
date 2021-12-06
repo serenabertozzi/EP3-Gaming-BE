@@ -34,6 +34,7 @@ app.use(session({
   store: store,
   cookie: {
     httpOnly: false,
+    secure: true,
   }
 }));
 
