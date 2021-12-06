@@ -34,8 +34,6 @@ app.use(session({
   store: store,
   cookie: {
     cookieName: "test",
-    secure,
-    httpOnly,
   }
 }));
 
