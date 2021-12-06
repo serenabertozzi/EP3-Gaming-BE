@@ -32,8 +32,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   store: store,
+  proxy : true,
   cookie: {
-    cookieName: "test",
+    secure : true,
   }
 }));
 
