@@ -12,6 +12,10 @@ const morgan = require('morgan')
 
 const app = express();
 
+const store = new MongoDBSession({
+  uri: process.env.DB,
+  collection: 'mySessions'
+})
 
 const port = process.env.PORT || 5000;
 
@@ -36,11 +40,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-
-const store = new MongoDBSession({
-  uri: process.env.DB,
-  collection: 'mySessions'
-})
 
 app.use(passport.initialize());
 
