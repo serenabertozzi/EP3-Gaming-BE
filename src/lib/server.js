@@ -17,9 +17,20 @@ const port = process.env.PORT || 5000;
 
 app.use(morgan('combined'))
 
+app.use(session({
+  secret: 'key that will sign cookie',
+  resave: false,
+  saveUninitialized: true,
+  store: store,
+  cookie: {
+    secure: true,
+  }
+}));
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'POST, GET')
   next();
 });
 
@@ -30,13 +41,6 @@ const store = new MongoDBSession({
   uri: process.env.DB,
   collection: 'mySessions'
 })
-
-app.use(session({
-  secret: 'key that will sign cookie',
-  resave: false,
-  saveUninitialized: false,
-  store: store,
-}));
 
 app.use(passport.initialize());
 
