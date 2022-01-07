@@ -2,8 +2,7 @@
   <h1> EP3-Gaming-BE </h1>
   <h2>Engineering Project 3 - Gaming - Back-End</h2>
   <h3> AKA Life of Bernard </h3>
-
-| [Contributors](#contributors) | [Tech Stack](#stack) | [Setup](#setup) | [Tests and code coverage](#test) |
+  
 </div>
 
 ## <a name="contributors">Contributors</a>
